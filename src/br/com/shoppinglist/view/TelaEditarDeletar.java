@@ -184,6 +184,11 @@ public class TelaEditarDeletar extends javax.swing.JFrame {
         btnHistorico.setFont(new java.awt.Font("Monospaced", 0, 24)); // NOI18N
         btnHistorico.setForeground(new java.awt.Color(255, 255, 255));
         btnHistorico.setText("Historico");
+        btnHistorico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistoricoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -315,6 +320,10 @@ public class TelaEditarDeletar extends javax.swing.JFrame {
         spnQuantidade.setValue(0);
         spnValor.setValue(0);
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnHistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoricoActionPerformed
+        new TelaHistorico().setVisible(true);
+    }//GEN-LAST:event_btnHistoricoActionPerformed
 
     /**
      * @param args the command line arguments
