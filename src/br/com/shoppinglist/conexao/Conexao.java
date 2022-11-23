@@ -21,8 +21,8 @@ public class Conexao {
 
             String url = "jdbc:mysql://" + servidor + "/" + schema;
 
-            String usuario = "lucas";
-            String senha = "Lucas5003";
+            String usuario = "root"; // Usuário do Banco
+            String senha = "123456"; // Senha do Banco
 
             conexao = (Connection) DriverManager.getConnection(url, usuario, senha);
 
