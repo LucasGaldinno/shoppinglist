@@ -96,47 +96,6 @@ public class ProdutoController {
         }
     }
 
-    // Metodo de busca de produto
-    public List<Produto> buscaProduto(String nome) throws SQLException {
-
-        Conexao con = new Conexao();
-        con.getConexao();
-        PreparedStatement stmt = null;
-        ResultSet resultado = null;
-
-        List<Produto> listaProduto = new ArrayList<>();
-
-        try {
-            String sql = "SELECT * FROM produto WHERE nome LIKE ?;";
-
-            stmt = con.getConexao().prepareStatement(sql);
-            stmt.setString(1, "%" + nome + "%");
-
-            resultado = stmt.executeQuery();
-
-            while (resultado.next()) {
-                Produto prod = new Produto();
-
-                prod.setNome(resultado.getString("nome"));
-                prod.setQtd(resultado.getInt("qtd"));
-                prod.setValor(resultado.getDouble("valor"));
-
-                listaProduto.add(prod);
-            }
-
-            return listaProduto;
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return null;
-
-        } finally {
-            resultado.close();
-            stmt.close();
-            con.getConexao().close();
-        }
-    }
-
     public Produto buscaPorId(int id) {
         Conexao conexao = new Conexao();
 
