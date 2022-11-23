@@ -29,7 +29,7 @@ Photoshop para o desenvolvimento dos protótipos da aplicação<br>
 <img src="https://raw.githubusercontent.com/LucasGaldinno/shoppinglist/main/Screenshot/Tela-de-Historico.png">
 
 <h2> Integrantes do Grupo </h2>
-<p> Leonardo Rodrigues Azevedo </p> <br>
-<p> Lucas Galdino Sertão </p> <br>
-<p> Matheus José Sombra </p> <br>
+<p> Leonardo Rodrigues Azevedo </p>
+<p> Lucas Galdino Sertão </p>
+<p> Matheus José Sombra </p>
 <p> Pedro Henrique Guedes Caruso </p>
