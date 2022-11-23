@@ -82,7 +82,7 @@ public class ProdutoController {
 
         Conexao conexao = new Conexao();
         PreparedStatement st = null;
-        
+
         String sql = "DELETE FROM produto WHERE id=?";
 
         try {
@@ -173,5 +173,43 @@ public class ProdutoController {
             conexao.fechaConexao();
         }
         return null;
+    }
+
+    public List<Produto> obterListaDeProduto() throws SQLException {
+
+        Conexao con = new Conexao();
+        con.getConexao();
+        PreparedStatement comando = null;
+        ResultSet resultado = null;
+
+        try {
+
+            String sql = "SELECT * FROM produto";
+
+            comando = con.getConexao().prepareStatement(sql);
+            resultado = comando.executeQuery();
+
+            List<Produto> listaProduto;
+            listaProduto = new ArrayList<>();
+
+            while (resultado.next()) {
+                Produto prod = new Produto();
+
+                prod.setNome(resultado.getString("nome"));
+                prod.setQtd(resultado.getInt("qtd"));
+                prod.setValor(resultado.getDouble("valor"));
+
+                listaProduto.add(prod);
+            }
+
+            return listaProduto;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        } finally {
+            resultado.close();
+            comando.close();
+            con.getConexao().close();
+        }
     }
 }

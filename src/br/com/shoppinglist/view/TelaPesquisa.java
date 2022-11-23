@@ -100,16 +100,20 @@ public class TelaPesquisa extends javax.swing.JFrame {
 
         tblListaProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nome", "Quantidade", "Valor"
             }
         ));
+        tblListaProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pnlTabelaConsulta.setViewportView(tblListaProduto);
+        if (tblListaProduto.getColumnModel().getColumnCount() > 0) {
+            tblListaProduto.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

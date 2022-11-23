@@ -32,12 +32,12 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         txtNomeProduto = new javax.swing.JTextField();
-        txtQuantidade = new javax.swing.JTextField();
-        txtValor = new javax.swing.JTextField();
         jButtonSalvar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        spnValor = new javax.swing.JSpinner();
+        spnQuantidade = new javax.swing.JSpinner();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,10 +68,10 @@ public class TelaCadastro extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNomeProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(spnValor)
+                            .addComponent(spnQuantidade))
                         .addGap(150, 150, 150))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButtonSalvar)
@@ -87,12 +87,12 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(spnQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                    .addComponent(spnValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
                 .addComponent(jButtonSalvar)
                 .addContainerGap(46, Short.MAX_VALUE))
         );
@@ -133,8 +133,8 @@ public class TelaCadastro extends javax.swing.JFrame {
             double valor;
 
             nome = txtNomeProduto.getText();
-            qtd = Integer.parseInt(txtQuantidade.getText());
-            valor = Double.parseDouble(txtValor.getText());
+            qtd = Integer.parseInt(spnQuantidade.getValue().toString());
+            valor = Double.parseDouble(spnValor.getValue().toString());
             
             prod.setNome(nome);
             prod.setQtd(qtd);
@@ -148,6 +148,10 @@ public class TelaCadastro extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        
+        txtNomeProduto.setText("");
+        spnQuantidade.setValue(0);
+        spnValor.setValue(0);
     }//GEN-LAST:event_jButtonSalvarProdutoActionPerformed
 
     /**
@@ -192,8 +196,8 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSpinner spnQuantidade;
+    private javax.swing.JSpinner spnValor;
     private javax.swing.JTextField txtNomeProduto;
-    private javax.swing.JTextField txtQuantidade;
-    private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }
