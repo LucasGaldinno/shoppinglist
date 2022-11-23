@@ -56,7 +56,7 @@ public class TelaHome extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Monospaced", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
         jLabel1.setText("Organize suas compras");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/shoppinglist/imagens/image_JPG.png"))); // NOI18N
